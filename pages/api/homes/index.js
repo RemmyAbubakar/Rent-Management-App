@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   if (req.method === "GET") {
     await db.connect();
 
-    const homes = await Home.find({});
+    const homes = await Home.find({}).sort({ _id: -1 });
 
     await db.disconnect();
 

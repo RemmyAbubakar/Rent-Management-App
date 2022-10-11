@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Fade from "react-reveal/Fade";
 import React,{useState} from "react";
 import {signIn} from "next-auth/react"
 import { useRouter } from "next/router";
@@ -40,8 +41,13 @@ const handleSubmit = async (e) => {
   return (
     <div className="flex justify-center items-center h-[80vh] font-abc">
       <div className="max-w-2xl w-full rounded-xl p-20">
-        <div className="flex justify-center mb-11 text-3xl">
+        <div className="flex justify-center mb-3 text-3xl">
           <h3>LOG IN</h3>
+        </div>
+        <div className="mt-3 mb-14">
+          <Fade left>
+            <div className="border border-black mx-[45%] flex justify-center items-center mt-3 mb-4"></div>
+          </Fade>
         </div>
         {error && <p>{error}</p>}
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -84,11 +90,13 @@ const handleSubmit = async (e) => {
           <hr className="my-6 border-gray-300 lg:my-8" />
           <div className="flex justify-center text-sm">
             <h2>
-            <Link href="/signup">
-              <button>Don't have an account?</button>
-             </Link>
               <Link href="/signup">
-                <button type="submit" className="ml-1 text-blue-900">SignUp</button>
+                <button>Don't have an account?</button>
+              </Link>
+              <Link href="/signup">
+                <button type="submit" className="ml-1 text-blue-900">
+                  SignUp
+                </button>
               </Link>
             </h2>
           </div>

@@ -7,8 +7,21 @@ import Whatwedo from "../components/Whatwedo";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { getHomes } from "../utils/getHomes";
 
-export default function Home() {
+export async function getStaticProps() {
+  let homes = await getHomes();
+
+  homes = homes.splice(0, 3);
+
+  return {
+    props: {
+      homes,
+    },
+  };
+}
+
+export default function Home({ homes }) {
   const { status } = useSession();
   const router = useRouter();
 
@@ -62,7 +75,26 @@ export default function Home() {
 
       <Whatwedo />
       <KnowUs />
-      <HomePageProperties />
+      <div>
+        <div>
+          <div className="flex justify-center mt-14">
+            <h2 className="text-3xl font-second"> Popular Homes </h2>
+          </div>
+          <Fade left>
+            <div className="border border-black mx-[48%] flex justify-center items-center mt-4 mb-4"></div>
+          </Fade>
+        </div>
+        <div className="flex justify-center flex-wrap">
+          {homes?.map((home, idx) => (
+            <HomePageProperties key={idx} home={home} />
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center mb-9">
+        <Link href="/home">
+          <h3 className="font-second cursor-pointer">VIEW ALL</h3>
+        </Link>
+      </div>
     </div>
   );
 }

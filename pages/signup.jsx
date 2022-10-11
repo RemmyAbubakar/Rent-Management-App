@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Fade from "react-reveal/Fade";
 import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -63,10 +64,14 @@ function signup() {
   return (
     <div className="flex justify-center items-center h-screen font-abc">
       <div className="max-w-2xl w-full rounded-xl p-20">
-        <div className="flex justify-center mb-11 text-3xl">
+        <div className="flex justify-center mb-3 text-3xl">
           <h3>SIGN UP</h3>
         </div>
-
+        <div className="mt-3 mb-14">
+          <Fade left>
+            <div className="border border-black mx-[45%] flex justify-center items-center mt-3 mb-4"></div>
+          </Fade>
+        </div>
         {error && <p>{error}</p>}
 
         <form onSubmit={handleSubmit} className="space-y-6">

@@ -1,5 +1,5 @@
-
-
+import Link
+ from "next/link";
 function Footer() {
   return (
     <div>
@@ -48,9 +48,9 @@ function Footer() {
                 </a>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Contact Us
-                </a>
+                <Link href="/contact-us">
+                  <a className="hover:underline">Contact Us</a>
+                </Link>
               </li>
             </ul>
           </div>

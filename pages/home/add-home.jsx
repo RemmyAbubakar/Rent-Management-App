@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
+import Spinners from "../../components/Spinner";
 
 function addhome() {
   const [data, setData] = useState({
@@ -15,6 +16,7 @@ function addhome() {
   const { data: session } = useSession();
 
   const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const router = useRouter();
 
@@ -24,6 +26,7 @@ function addhome() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     try {
       let imagesArray = Array.from(data.imageUrl);
@@ -50,9 +53,12 @@ function addhome() {
 
       await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/homes`, post);
 
+      setIsSubmitting(false);
       router.push("/home");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -64,6 +70,7 @@ function addhome() {
 
   return (
     <div>
+      {setIsSubmitting && <Spinners />}
       <div className="flex justify-center items-center lg:h-screen md:h-screen sm:h-screen font-abc bg-[url('/images/blur.jpg')] bg-no-repeat bg-cover bg-center">
         <div className="max-w-xl w-full rounded-xl p-14 bg-white">
           <div className="flex justify-center mb-11 text-3xl">
@@ -139,6 +146,7 @@ function addhome() {
               <button
                 type="submit"
                 className="text-white text-sm w-[100%] h-12 bg-blue-800 rounded-full"
+                disabled={isSubmitting}
               >
                 ADD
               </button>
