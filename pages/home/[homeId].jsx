@@ -10,18 +10,9 @@ import { getHomes } from "../../utils/getHomes";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-export async function getStaticPaths() {
-  const res = await getHomes();
 
-  const paths = res.map((home) => ({ params: { homeId: String(home._id) } }));
 
-  return {
-    paths,
-    fallback: true,
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const home = await getHomes(context.params.homeId);
 
   return {
