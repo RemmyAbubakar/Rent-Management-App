@@ -2,14 +2,12 @@ import { MdLocationPin } from "react-icons/md";
 import Link from "next/link";
 import Fade from "react-reveal/Fade";
 
-
 function HomePageProperties({ home }) {
-  
   return (
     <div className="cursor-pointer">
       <Link href={`/home/${home._id}`}>
         <div className="flex flex-wrap gap-10 justify-center p-10">
-          <div className="max-w-sm bg-white  dark:bg-white hover:scale-110 duration-75">
+          <div className="max-w-sm bg-white  dark:bg-white hover:scale-110 duration-300">
             <img
               className="w-[100%] rounded-2xl"
               src={home.imageUrl[0]}
