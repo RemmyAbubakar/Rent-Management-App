@@ -17,12 +17,15 @@ export async function getServerSideProps() {
 function AvailableHome({ homes }) {
   return (
     <div>
-      <SearchFilter /> 
-      <AvailableProperties /> 
-      <div className="flex flex-wrap gap-28 justify-center p-10"> 
-        {homes?.map((home, idx) => (
-          <div key={idx} className="w-80 bg-white dark:bg-white hover:scale-110 duration-75"> 
-            <Link href={`/home/${home._id}`}> 
+      <SearchFilter />
+      <AvailableProperties />
+      <div className="flex flex-wrap gap-28 justify-center p-10">
+        {homes?.map((home) => (
+          <div
+            key={home._id}
+            className="w-80 bg-white dark:bg-white hover:scale-110 duration-75"
+          >
+            <Link href={`/home/${home._id}`}>
               <a>
                 <img
                   className="w-[100%] rounded-xl"
