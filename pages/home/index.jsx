@@ -22,7 +22,7 @@ function AvailableHome({ homes }) {
       <div className="flex flex-wrap gap-28 justify-center p-10">
         {homes?.map((home) => (
           <div
-            key={home._id}
+            key={home.id}
             className="w-80 bg-white dark:bg-white hover:scale-110 duration-75"
           >
             <Link href={`/home/${home._id}`}>
