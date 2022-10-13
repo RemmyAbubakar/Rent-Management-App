@@ -4,7 +4,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 
 
-function contactUs() {
+function ContactUs() {
 
   const [data, setData] = useState({
     name: "",
@@ -110,4 +110,4 @@ function contactUs() {
   );
 }
 
-export default contactUs;
+export default ContactUs;

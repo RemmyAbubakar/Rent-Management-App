@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 import Spinners from "../../components/Spinner";
 
-function addhome() {
+function Addhome() {
   const [data, setData] = useState({
     location: "",
     typeofhome: "",
@@ -151,4 +151,4 @@ function addhome() {
   );
 }
 
-export default addhome;
+export default Addhome;

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-function signup() {
+function Signup() {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
@@ -171,4 +171,4 @@ function signup() {
   );
 }
 
-export default signup;
+export default Signup;

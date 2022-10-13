@@ -5,7 +5,7 @@ import {signIn} from "next-auth/react"
 import { useRouter } from "next/router";
 
 
-function signin() {
+function Signin() {
 
 const [data, setData] = useState({
   email: "",
@@ -106,4 +106,4 @@ const handleSubmit = async (e) => {
   );
 }
 
-export default signin;
+export default Signin;

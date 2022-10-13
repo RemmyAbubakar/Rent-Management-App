@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-function homeDetails({ home }) {
+function HomeDetails({ home }) {
   const { status } = useSession();
   const router = useRouter();
 
@@ -110,4 +110,4 @@ function homeDetails({ home }) {
   );
 }
 
-export default homeDetails;
+export default HomeDetails;

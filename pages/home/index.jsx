@@ -4,7 +4,7 @@ import SearchFilter from "../../components/SearchFilter";
 import { getHomes } from "../../utils/getHomes";
 import Link from "next/link";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const homes = await getHomes();
 
   return {

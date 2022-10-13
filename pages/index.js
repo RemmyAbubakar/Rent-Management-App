@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { getHomes } from "../utils/getHomes";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let homes = await getHomes();
 
   homes = homes.splice(0, 3);
