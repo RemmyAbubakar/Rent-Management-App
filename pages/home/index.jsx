@@ -20,9 +20,9 @@ function AvailableHome({ homes }) {
       <SearchFilter />
       <AvailableProperties />
       <div className="flex flex-wrap gap-28 justify-center p-10">
-        {homes?.map((home) => (
+        {homes?.map((home, idx) => (
           <div
-            key={home.id}
+            key={idx}
             className="w-80 bg-white dark:bg-white hover:scale-110 duration-75"
           >
             <Link href={`/home/${home._id}`}>
