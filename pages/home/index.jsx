@@ -20,8 +20,8 @@ function AvailableHome({ homes }) {
       <SearchFilter /> 
       <AvailableProperties /> 
       <div className="flex flex-wrap gap-28 justify-center p-10"> 
-        {homes?.map((home) => (
-          <div className="w-80 bg-white dark:bg-white hover:scale-110 duration-75"> 
+        {homes?.map((home, idx) => (
+          <div key={idx} className="w-80 bg-white dark:bg-white hover:scale-110 duration-75"> 
             <Link href={`/home/${home._id}`}> 
               <a>
                 <img
