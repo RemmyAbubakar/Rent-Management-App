@@ -53,7 +53,6 @@ function addhome() {
 
       await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/homes`, post);
 
-      setIsSubmitting(false);
       router.push("/home");
     } catch (error) {
       setError(error.message);
@@ -62,15 +61,9 @@ function addhome() {
     }
   };
 
-  // useEffect(() => {
-  //   if (session?.user?.role !== "landlord") {
-  //     router.push("/");
-  //   }
-  // });
-
   return (
     <div>
-      {setIsSubmitting && <Spinners />}
+      <Spinners isSubmitting={isSubmitting} />
       <div className="flex justify-center items-center lg:h-screen md:h-screen sm:h-screen font-abc bg-[url('/images/blur.jpg')] bg-no-repeat bg-cover bg-center">
         <div className="max-w-xl w-full rounded-xl p-14 bg-white">
           <div className="flex justify-center mb-11 text-3xl">

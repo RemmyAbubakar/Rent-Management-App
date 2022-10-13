@@ -91,7 +91,7 @@ function contactUs() {
               cols="30"
               rows="10"
               placeholder="Message"
-              className="border w-full p-1 rounded outline-none mt-2 border-[black]"
+              className="border w-full p-1 outline-none mt-2 border-[black] rounded-xl"
               value={data.message}
               onChange={handleChange}
             ></textarea>

@@ -49,8 +49,8 @@ function NavBar() {
             <ul className="md:flex gap-4 hidden mb-2">
               <li>
                 <Link href="/home">
-                  <button className=" p-1 font-second rounded-full w-20 h-10 text-white hover:bg-white hover:text-blue-900 hover:scale-110 duration-100 font-semibold uppercase">
-                    Homes
+                  <button className="p-1 font-second rounded-full w-30 h-10 text-white hover:bg-white hover:text-blue-900 hover:scale-110 duration-100 font-semibold uppercase">
+                    PROPERTIES FOR RENT
                   </button>
                 </Link>
               </li>

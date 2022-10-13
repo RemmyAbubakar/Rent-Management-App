@@ -31,15 +31,18 @@ function MenuItems({ showmenu, active }) {
         />
         <li className="border-b w-[70%] flex justify-center">
           <Link href="/home">
-            <button className="uppercase text-white mb-3">Homes</button>
+            <button className="uppercase text-white mb-3">
+              PROPERTIES FOR RENT
+            </button>
           </Link>
         </li>
         {data?.user?.role === "landlord" && (
-        <li className="border-b w-[70%] flex justify-center">
-          <Link href="/home/add-home">
-            <button className="uppercase text-white mb-3">Add home</button>
-          </Link>
-        </li>)}
+          <li className="border-b w-[70%] flex justify-center">
+            <Link href="/home/add-home">
+              <button className="uppercase text-white mb-3">Add home</button>
+            </Link>
+          </li>
+        )}
         <li className="border-b w-[70%] flex justify-center">
           <Link href="/signin">
             {status === "authenticated" ? (

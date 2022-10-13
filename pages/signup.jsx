@@ -55,7 +55,7 @@ function signup() {
         `${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/register`,
         data
       );
-      router.push("/");
+      router.push("/signin");
     } catch (error) {
       setError(error.message);
     }
